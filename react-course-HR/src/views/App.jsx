@@ -1,9 +1,23 @@
 import React from 'react';
-import UsersList from '../components/UsersList/UsersList';
+import UsersList from '../components/organisms/UsersList/UsersList';
+import styled from 'styled-components';
+import { GlobalStyle } from '../assets/styles/GlobalStyle';
+
+const Wrapper = styled.div`
+  background-color: #f7f8fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
 
 const App = () => (
   <>
-    <UsersList />
+    <GlobalStyle />
+    <Wrapper>
+      <UsersList />
+    </Wrapper>
   </>
 );
 
