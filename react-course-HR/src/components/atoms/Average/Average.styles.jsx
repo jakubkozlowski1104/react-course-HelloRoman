@@ -7,7 +7,7 @@ export const StyledAverage = styled.div`
   background-color: ${({ value, theme }) => {
     if (value > 4) return theme.colors.success;
     if (value > 3) return theme.colors.warning;
-    else return theme.colors.error;
+    if (value > 2) return theme.colors.error;
   }};
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: bold;
