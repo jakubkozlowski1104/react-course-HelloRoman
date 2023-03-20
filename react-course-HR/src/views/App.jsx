@@ -1,24 +1,17 @@
 import React from 'react';
 import UsersList from '../components/organisms/UsersList/UsersList';
-import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../assets/styles/GlobalStyle';
-
-const Wrapper = styled.div`
-  background-color: #f7f8fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-`;
+import { theme } from '../assets/styles/Theme';
+import { StyledWrapper } from './App.styles';
 
 const App = () => (
-  <>
+  <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <Wrapper>
+    <StyledWrapper>
       <UsersList />
-    </Wrapper>
-  </>
+    </StyledWrapper>
+  </ThemeProvider>
 );
 
 export default App;
