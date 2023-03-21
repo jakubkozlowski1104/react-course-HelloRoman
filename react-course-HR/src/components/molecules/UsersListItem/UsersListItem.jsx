@@ -4,16 +4,21 @@ import Button from '../../atoms/Button/Button';
 import { StyledWrapper, StyledMainData } from './UserListItem.styles';
 import Average from '../../atoms/Average/Average';
 
-const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => (
-  <StyledWrapper>
-    <Average value={average} />
-    <StyledMainData>
-      <p className='name'>{name}</p>
-      <p className='attendance'>attendance: {attendance}</p>
-    </StyledMainData>
-    <Button />
-  </StyledWrapper>
-);
+const UsersListItem = ({
+  deleteUser,
+  userData: { average, name, attendance = '0%' },
+}) => {
+  return (
+    <StyledWrapper>
+      <Average value={average} />
+      <StyledMainData>
+        <p className='name'>{name}</p>
+        <p className='attendance'>attendance: {attendance}</p>
+      </StyledMainData>
+      <Button onClick={() => deleteUser(name)} />
+    </StyledWrapper>
+  );
+};
 
 UsersListItem.propTypes = {
   userData: PropTypes.shape({
