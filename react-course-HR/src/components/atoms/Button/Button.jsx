@@ -1,13 +1,17 @@
-import PropTypes from 'prop-types';
-import { ReactComponent as DeleteIcon } from '../../../assets/icons/delete-icon.svg';
-import { StyledButton } from './Button.styles';
+import styled from 'styled-components';
 
-const Button = ( props ) => {
-  return (
-    <StyledButton {...props}>
-      <DeleteIcon />
-    </StyledButton>
-  );
-};
+export const Button = styled.button`
+  margin: 15px 5px;
+  padding: 6px 20px;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  background-color: ${({ theme }) => theme.colors.lightPurple};
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.darkGrey};
 
-export default Button;
+  button:hover {
+    background-color: red;
+  }
+`;
